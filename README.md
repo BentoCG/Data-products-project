@@ -1,2 +1,2 @@
-Project for the Coursera developing data products course
+Project for the Coursera Developing Data Products course
 =====================
