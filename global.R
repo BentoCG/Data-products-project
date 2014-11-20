@@ -1,5 +1,10 @@
-library(caret)
-library(AppliedPredictiveModeling)
+require(shiny)
+require(caret)
+require(AppliedPredictiveModeling)
+require(gbm)
+require(e1071)
+require(survival)
+require(splines)
 data(abalone)
 
 #To measure shuckled weight, viscera weight and shell weigh, you would have to kill your abalone :(
@@ -14,7 +19,7 @@ testing = abalone[-inTrain,]
 set.seed(132)
 #I've tried several methods and boosting was the most efficient.
 trControl = trainControl(method = "cv", number = 4, allowParallel =TRUE)
-modFit = train(Type ~ ., method = "gbm", data = training, trControl = trControl, verbose = FALSE)
+modFit = train(Type ~ ., method = "gbm", data = training,trControl = trControl, verbose = FALSE)
 
 #This function is necessary to predict the sex based on the input.
 createRow = function(x){

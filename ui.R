@@ -11,10 +11,13 @@ shinyUI(
        sliderInput('WholeWeight', 'Whole weight(grams)', mean(abalone$WholeWeight), min = min(abalone$WholeWeight), 
                     max = max(abalone$WholeWeight), step = 0.01),
        sliderInput('Rings', 'Number of age rings', 10, min = 1, max = 29, step = 1),
-       helpText("Note: Abalone infants cannot be sexed, thus there will be males, females and infants.
+       h3("Instructions:"),
+       helpText("Measure and weight your abalone carefully, use the slider to put on the respective measurements and voilà!
+                 Now you have a good guess about the gender of your abalone!"),
+       helpText("Note: Abalone infants cannot be sexed, thus they are classified as males, females and infants.
                 The sex is predicted using a boosting method.Predictions are barely superior
                 than guessing at random (~55% accuracy, sd = 0.015)."),
-       actionButton("goButton", "You don't really need to press this")
+       actionButton("goButton", "Pressing this button is completely unnecessary")
     ),
     
     mainPanel(

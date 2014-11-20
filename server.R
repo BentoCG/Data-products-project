@@ -11,11 +11,13 @@ shinyServer( function(input, output){
    
    
    if( x == "M"){
-       z = "it's a boy!"}
+       z = "it's probably a boy!"}
    else if( x == "F"){
-       z = "it's a girl!"}
+       z = "it's probably a girl!"}
    else{
-       z = "it is still an imature."}
+       z = "it's probably still an imature."}
    })
    output$gender = renderText({t()})
 })    
+
+
